@@ -6,4 +6,4 @@ for n in range(0, 9):
         elif n == 8 and i == 9:
             print("{:d}{:d}".format(n, i))
         else:
-            print("{:d}{:d}".format(n, i), end=", ")	
+            print("{:d}{:d}".format(n, i), end=", ")
