@@ -33,7 +33,7 @@ int check_cycle(listint_t *list)
 			return (0);
 		}
 
-		main = main->next
+		main = main->next;
 		check = check->next;
 	}
 
