@@ -13,7 +13,7 @@ int check_cycle(listint_t *list)
 	listint_t *check = list;
 
 	
-	if (list == NULL)
+	if (list == NULL || list->next)
 	{
 		return (0);
 	}
@@ -33,6 +33,7 @@ int check_cycle(listint_t *list)
 			return (0);
 		}
 
+		main = main->next
 		check = check->next;
 	}
 
