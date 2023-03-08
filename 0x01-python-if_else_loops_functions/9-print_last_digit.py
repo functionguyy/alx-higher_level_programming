@@ -6,5 +6,6 @@ def print_last_digit(number):
         sign *= -1
 
     last_digit = (abs(number) % 10) * sign
+    print("{:d}".format(last_digit))
 
     return last_digit
