@@ -37,7 +37,7 @@ def my_calculator():
         elif math_op == '/':
             print("{0:d} {1:s} {2:d} = {3:d}".format(a, math_op, b, div(a, b)))
         else:
-            print("Unknown operator. Available operators: +")
+            print("Unknown operator. Available operators: +, -, * and /")
             sys.exit(1)
     else:
         print("Usage: {:s} <a> <operator> <b>".format(sys.argv[0]))
@@ -45,4 +45,4 @@ def my_calculator():
 
 
 if __name__ == '__main__':
-    main()
+    my_calculator()
