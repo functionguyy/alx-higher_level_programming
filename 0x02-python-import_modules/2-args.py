@@ -18,7 +18,7 @@ def my_function():
             for i, arg in enumerate(args.args):
                 print("{0:d}: {1:s}".format(i+1, arg))
     else:
-        print("{:d} arguments".format(0))
+        print("{:d} arguments.".format(0))
 
 
 if __name__ == '__main__':
