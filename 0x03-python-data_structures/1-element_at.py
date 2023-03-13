@@ -13,6 +13,6 @@ def element_at(my_list: list, idx: int) -> str:
 
     if idx < 0:
         return None
-    if idx > n:
-        return None 
+    if idx > (n - 1):
+        return None
     return my_list[idx]
