@@ -11,6 +11,8 @@ def element_at(my_list: list, idx: int) -> str:
     """
     n = len(my_list)
 
-    if idx < 0 or idx > n:
+    if idx < 0:
         return None
+    if idx > n:
+        return None 
     return my_list[idx]
