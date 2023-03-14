@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def no_c(my_string: str) -> str:
     """Function that removes all characters c and C from a string
 
@@ -8,6 +9,8 @@ def no_c(my_string: str) -> str:
         new string
     """
     if type(my_string) is str:
-        letter_list = list(my_string)
-        letter_list = [x for x in my_string if x not in "cC"]
-        return "".join(letter_list)
+        new_string = ""
+        for letter in my_string:
+            if letter not in "cC":
+                new_string += letter
+        return new_string
