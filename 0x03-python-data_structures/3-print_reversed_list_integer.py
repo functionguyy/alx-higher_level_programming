@@ -9,6 +9,6 @@ def print_reversed_list_integer(my_list: list = []) -> int:
         print one integer per line
     """
     if type(my_list) is list:
-        my_list.reverse()
+        new_list = my_list[::-1]
     for num in my_list:
         print("{:d}".format(num))
