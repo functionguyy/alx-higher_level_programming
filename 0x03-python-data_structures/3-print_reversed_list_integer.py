@@ -8,7 +8,7 @@ def print_reversed_list_integer(my_list: list = []) -> int:
     Return:
         print one integer per line
     """
-    if typr(my_list) is list:
+    if type(my_list) is list:
         my_list.reverse()
     for num in my_list:
         print("{:d}".format(num))
