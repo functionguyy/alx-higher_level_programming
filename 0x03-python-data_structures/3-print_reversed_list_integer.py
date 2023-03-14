@@ -9,5 +9,6 @@ def print_reversed_list_integer(my_list: list = []) -> int:
         print one integer per line
     """
     if type(my_list) is list:
-        for num in sorted(my_list, reverse=True):
+        my_list.reverse()
+        for num in my_list:
             print("{:d}".format(num))
