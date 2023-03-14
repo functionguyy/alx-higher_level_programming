@@ -8,8 +8,6 @@ def no_c(my_string: str) -> str:
         new string
     """
     if type(my_string) is str:
-        new_string = ""
-        for letter in my_string:
-            if letter not in "cC":
-                new_string += letter
-        return new_string
+        letter_list = list(my_string)
+        letter_list = [x for x in my_string if x not in "cC"]
+        return "".join(letter_list)
