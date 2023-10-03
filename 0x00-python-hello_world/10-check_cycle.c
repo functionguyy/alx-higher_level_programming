@@ -16,20 +16,15 @@ int check_cycle(listint_t *list)
 
 	/* initialize variables */
 	current = list;
-	runningPtr = NULL;
+	runningPtr = list;
 
-	if (current->next == NULL)
-		return (0);
 
-	runningPtr = list->next->next;
-	while (current != NULL)
+	while (current && runningPtr && runningPtr->next)
 	{
 		current = current->next;
+		runningPtr = runningPtr->next->next;
 		if (current == runningPtr)
 			return (1);
-		runningPtr = runningPtr->next->next;
-		if (runningPtr == NULL)
-			return (0);
 	}
 
 	return (0);
