@@ -24,11 +24,10 @@ int check_cycle(listint_t *list)
 
 	while (current != runningPtr)
 	{
-		if (runningPtr == NULL)
-			return (0);
-
 		current = current->next;
 		runningPtr = runningPtr->next->next;
+		if (runningPtr == NULL || current == NULL)
+			return (0);
 	}
 
 	return (1);
