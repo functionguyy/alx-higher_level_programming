@@ -21,12 +21,14 @@ int check_cycle(listint_t *list)
 		return (0);
 
 	runningPtr = list->next->next;
+	if (runningPtr == NULL)
+		return (0);
 
 	while (current != runningPtr)
 	{
 		current = current->next;
 		runningPtr = runningPtr->next->next;
-		if (runningPtr == NULL || current == NULL)
+		if (runningPtr == NULL)
 			return (0);
 	}
 
