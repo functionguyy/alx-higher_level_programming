@@ -8,22 +8,23 @@
 int check_cycle(listint_t *list)
 {
 	/* declare variables */
-	listint_t *head, *current, *runningPtr;
+	listint_t *current, *runningPtr;
+
+
+	if (list == NULL)
+		return (0);
 
 	/* initialize variables */
-	head = list;
 	current = list;
-	runningPtr = list->next;
+	runningPtr = list->next->next;
 
 	while (current != runningPtr)
 	{
 		if (runningPtr == NULL)
 			return (0);
-		if (runningPtr == head)
-			return (1);
 
 		current = current->next;
-		runningPtr = runningPtr->next;
+		runningPtr = runningPtr->next->next;
 	}
 
 	return (1);
