@@ -18,4 +18,4 @@ def print_matrix_integer(matrix: list = [[]]) -> int:
                     else:
                         print("{:d}".format(element))
             else:
-                print() # if no argument is passed print new line
+                print()  # if no argument is passed print new line
