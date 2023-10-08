@@ -38,6 +38,7 @@ int is_palindrome(listint_t **head)
 		if (nl_head->n != node->n)
 			return (0);
 
+		start += 1;
 		/* decrement end idx */
 		end -= 1;
 		nl_head = nl_head->next;
