@@ -25,10 +25,8 @@ int is_palindrome(listint_t **head)
 
 	nl_head = *head;
 	end = listint_len(nl_head) - 1;
-	while (*head != NULL)
+	while (*head != NULL && start < end)
 	{
-		if (start >= end)
-			return (1);
 		/**
 		 * get the node at the end of the list
 		 * and compare to the node at current loop head
@@ -37,15 +35,14 @@ int is_palindrome(listint_t **head)
 		 */
 		node = get_nodeint_at_index(nl_head, end);
 
-		if ((*head)->n == node->n)
-		{
-			start += 1;
-			end -= 1;
-		}
+		if ((*head)->n != node->n)
+			return (0);
+		start += 1;
+		end -= 1;
 		*head = (*head)->next;
 	}
 
-	return (0);
+	return (1);
 }
 /**
  * listint_len - return the number of elements in a linked list
