@@ -4,12 +4,10 @@
 
 class Rectangle:
     """Define the internals of a Rectangle object type"""
-    def __init__(self, width=0, height=0, area, perimeter):
+    def __init__(self, width=0, height=0):
         """Initialize an instance of a Rectangle object type"""
         self.width = width
         self.height = height
-        self.area = area
-        self.perimeter = perimeter
 
     @property
     def width(self):
