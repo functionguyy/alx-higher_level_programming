@@ -53,4 +53,4 @@ class Rectangle:
 
     def __repr__(self):
         """return the code representation of an instance"""
-        return "Rectangle({0.__width!r}, {0.__height!r})".format(self)
+        return "Rectangle({0.width!r}, {0.height!r})".format(self)
