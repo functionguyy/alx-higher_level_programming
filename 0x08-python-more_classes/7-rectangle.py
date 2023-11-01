@@ -7,7 +7,8 @@ class Rectangle:
 
 
     Attributes:
-        number_of_instances(int) keep the count of object reference
+        number_of_instances (:obj:`int`, optional): keep the count of object reference
+        print_symbol (:obj:`str`, optional): use as symbol for string representation
     """
 
     number_of_instances = 0
@@ -58,7 +59,7 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return ""
         else:
-            row = [print_symbol * self.__width for i in range(self.__height)]
+            row = [str(self.print_symbol) * self.__width for i in range(self.__height)]
             return "\n".join(row)
 
     def __repr__(self):
