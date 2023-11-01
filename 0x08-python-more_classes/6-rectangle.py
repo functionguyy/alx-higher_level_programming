@@ -1,17 +1,16 @@
 #!/usr/bin/python3
-"""defines a Rectangle object type
-
-
-Attributes:
-    number_of_instances(int): keep the count of object reference 
-"""
-
-
-number_of_instances = 0
+"""defines a Rectangle object type"""
 
 
 class Rectangle:
-    """Define the internals of a Rectangle object type"""
+    """Define the internals of a Rectangle object type
+
+    
+    Attributes:
+        number_of_instances(int) keep the count of object reference
+    """
+
+    number_of_instances = 0
     def __init__(self, width=0, height=0):
         """Initialize an instance of a Rectangle object type"""
         self.width = width
