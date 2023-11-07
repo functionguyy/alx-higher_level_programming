@@ -11,7 +11,6 @@ class MyInt(int):
         """initialize an instance of MyInt"""
         self.value = value
 
-
     def __ne__(self, number):
         """return self == number"""
         return self.value == number
@@ -19,4 +18,3 @@ class MyInt(int):
     def __eq__(self, number):
         """return self != number"""
         return self.value != number
-
