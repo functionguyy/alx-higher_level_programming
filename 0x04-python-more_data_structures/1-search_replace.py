@@ -11,7 +11,6 @@ def search_replace(my_list: list, search, replace) -> list:
         new list with replace element
 
     """
-
     new_list = []
     for list_element in my_list:
         if list_element == search:

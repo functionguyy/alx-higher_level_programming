@@ -9,8 +9,7 @@ def uniq_add(my_list: list = []) -> int:
         summation of integers
 
     """
-
-    uniq_values = {x for x in my_list}  # Set comprehension
+    uniq_values = {x for x in my_list}   # Set comprehension
     total = 0
     for x in uniq_values:
         total += x

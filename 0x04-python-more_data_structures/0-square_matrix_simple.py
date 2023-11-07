@@ -5,7 +5,6 @@ def square_matrix_simple(matrix: list = []) -> list:
     Args:
         matrix: 2D array
 
-
     Return:
         2D array squared values
     """

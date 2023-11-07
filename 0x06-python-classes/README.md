@@ -189,7 +189,7 @@ structure of a particular object.
 
 ## What is an attribute
 
-Functions and variables that defined inside a class are known as **methods** and
+Functions and variables that are defined inside a class are known as **methods** and
 **fields** respectively. These **fields** and **methods** are collectively 
 referred to as **attributes** of the class. 
 
