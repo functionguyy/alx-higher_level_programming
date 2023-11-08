@@ -9,7 +9,7 @@ class Student:
         """intialize an instance of Student
 
         Attributes:
-            first_name(:obj:): string 
+            first_name(:obj:): string
             last_name(:obj:): string
             age(:obj:): integer
         """
