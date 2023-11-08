@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """Module defines function class_to_json."""
 
 
