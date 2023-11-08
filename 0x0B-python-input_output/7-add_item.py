@@ -23,8 +23,8 @@ def add_item() -> None:
             except FileNotFoundError:
                 arg_list = []
             arg_list.extend(args.args)
-            save_from_json(arg_list, "add_item.json")
+            save_to_json(arg_list, "add_item.json")
 
 
-if __name__ = "__main__":
+if __name__ == "__main__":
     add_item()
