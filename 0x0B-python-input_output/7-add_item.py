@@ -3,8 +3,8 @@
 a list"""
 import argparse
 import sys
-sjf = __import__('5-save_to_json_file').save_to_json_file
-ljf = __import__('6-load_from_json_file').load_from_json_file
+save_to_json = __import__('5-save_to_json_file').save_to_json_file
+load_from_json = __import__('6-load_from_json_file').load_from_json_file
 
 
 def add_item() -> None:
@@ -19,8 +19,12 @@ def add_item() -> None:
 
         if args.args:
             try:
-                arg_list = ljf("add_item.json")
+                arg_list = load_from_json("add_item.json")
             except FileNotFoundError:
                 arg_list = []
             arg_list.extend(args.args)
-            sjf(arg_list, "add_item.json")
+            save_from_json(arg_list, "add_item.json")
+
+
+if __name__ = "__main__":
+    add_item()
