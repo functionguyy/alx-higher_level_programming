@@ -49,3 +49,6 @@ open(filename, mode, encoding=None)
 ## How to convert a Python data structure to a JSON string
 
 ## How to convert a JSON string to a Python data structure
+
+## Resources
+- [Validate arguments passed to a function](https://dfrieds.com/python/validate-function-arguments.html)
