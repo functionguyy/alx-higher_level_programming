@@ -90,6 +90,12 @@ class WidthAttrTestCase(unittest.TestCase):
         with self.assertRaises(ValueError):
             a.width = -1
 
+    # test float input
+
+    # test list input
+
+    # test bool input
+
 class HeightAttrTestCase(unittest.TestCase):
 
     def test_getter_method(self):
@@ -179,14 +185,14 @@ class YAttrTestCase(unittest.TestCase):
             self.rectangle.y = -3
 
 
-class AreaMethodTestCase(unittest.TestCase):
+class AreaAttrTestCase(unittest.TestCase):
 
     def setUp(self):
         self.rectangle = Rectangle(4, 10)
 
     def test_output(self):
         """obj.area() should return a value equal to obj.width * obj.height"""
-        self.assertEqual(self.rectangle.area(), 40) 
+        self.assertEqual(self.rectangle.area(), 4 * 10) 
 
         
 
