@@ -46,6 +46,11 @@ class InstanceAttrTestCase(unittest.TestCase):
         c = Rectangle(8, 10)
         self.assertTrue(hasattr(c, "area"), 'no area attribute')
 
+    def test_rectangle_object_has_display_attr(self):
+        """Rectangle object should have display attribute"""
+        c = Rectangle(8, 10)
+        self.assertTrue(hasattr(c, "display"), 'no display attribute')
+
 
 class IdAttrTestCase(unittest.TestCase):
 
