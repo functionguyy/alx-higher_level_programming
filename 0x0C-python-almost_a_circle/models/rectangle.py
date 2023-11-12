@@ -95,3 +95,7 @@ class Rectangle(Base):
                                                                       obj_y,
                                                                       obj_w,
                                                                       obj_h)
+
+    def update(self, *args):
+        """assign an argument to each attribute"""
+        pass
