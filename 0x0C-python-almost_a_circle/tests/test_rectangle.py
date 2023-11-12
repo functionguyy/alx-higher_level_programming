@@ -237,6 +237,19 @@ class DisplayAttrTestCase(unittest.TestCase):
             printed_out = output.getvalue()
             self.assertEqual(printed_out, out)
 
+    def test_display_aligned_rectangle(self):
+        r = Rectangle(2, 3, 2, 2)
+        out = ("\n"     +
+               "\n"     +
+               "  ##\n" +
+               "  ##\n" +
+               "  ##\n")
+
+        with patch('sys.stdout', new=StringIO()) as output:
+            r.display()
+            printed_out = output.getvalue()
+            self.assertEqual(printed_out, out)
+
 
 class StrAttrTestCase(unittest.TestCase):
     def test_str_attr_output(self):
