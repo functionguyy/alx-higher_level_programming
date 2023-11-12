@@ -239,8 +239,8 @@ class DisplayAttrTestCase(unittest.TestCase):
 
     def test_display_aligned_rectangle(self):
         r = Rectangle(2, 3, 2, 2)
-        out = ("\n"     +
-               "\n"     +
+        out = ("\n" +
+               "\n" +
                "  ##\n" +
                "  ##\n" +
                "  ##\n")
