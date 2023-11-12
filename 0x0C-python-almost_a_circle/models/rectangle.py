@@ -69,7 +69,15 @@ class Rectangle(Base):
     def display(self):
         """display"""
         rec_height = self.__height
+        y = self.__y
+        x = self.__x
+
+        if y > 0:
+            for y_pos in range(y):
+                print()
         while rec_height > 0:
+            for x_pos in range(x):
+                print(" ", end="")
             for n in range(self.__width):
                 print("#", end="")
             print()
