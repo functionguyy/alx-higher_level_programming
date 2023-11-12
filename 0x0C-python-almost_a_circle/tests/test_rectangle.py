@@ -2,6 +2,8 @@
 import unittest
 from models.rectangle import Rectangle
 from models.base import Base
+from io import StringIO
+from unittest.mock import patch
 
 
 
@@ -91,10 +93,27 @@ class WidthAttrTestCase(unittest.TestCase):
             a.width = -1
 
     # test float input
+    def test_float_input(self):
+        """assigning to width should fail with float input"""
+        d = Rectangle(1, 8)
+        with self.assertRaises(TypeError):
+            d.width = 1.0
+
 
     # test list input
+    def test_list_input(self):
+        """assigning to width should fail with list input"""
+        d = Rectangle(3, 6)
+        with self.assertRaises(TypeError):
+            d.width = [2, 4, 5]
 
     # test bool input
+    def test_list_input(self):
+        """assigning to width should fail with list input"""
+        d = Rectangle(3, 6)
+        with self.assertRaises(TypeError):
+            d.width = True
+
 
 class HeightAttrTestCase(unittest.TestCase):
 
@@ -195,6 +214,34 @@ class AreaAttrTestCase(unittest.TestCase):
         self.assertEqual(self.rectangle.area(), 4 * 10) 
 
         
+class DisplayAttrTestCase(unittest.TestCase):
+
+    def test_print_output(self):
+
+        r = Rectangle(4, 6)
+        out = ("####\n" +
+               "####\n" +
+               "####\n" +
+               "####\n" +
+               "####\n" +
+               "####\n")
+
+        with patch('sys.stdout', new=StringIO()) as output:
+            r.display()
+            printed_output = output.getvalue()
+            self.assertEqual(printed_output, out)
+
+    def test_print_height_one(self):
+
+        r = Rectangle(4, 1)
+        out = ("####\n")
+
+        with patch('sys.stdout', new=StringIO()) as output:
+            r.display()
+            printed_out = output.getvalue()
+            self.assertEqual(printed_out, out)
+
+
 
 if __name__ == "__main__":
     unittest.main()
