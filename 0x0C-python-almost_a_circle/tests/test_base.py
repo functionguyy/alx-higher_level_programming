@@ -3,7 +3,6 @@ import unittest
 from models.base import Base
 
 
-
 class IdAttributeTestCase(unittest.TestCase):
 
     def test_id_is_assigned(self):
