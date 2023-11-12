@@ -237,7 +237,8 @@ class DisplayAttrTestCase(unittest.TestCase):
             printed_out = output.getvalue()
             self.assertEqual(printed_out, out)
 
-    def test_display_aligned_rectangle(self):
+    # x and y have the same value
+    def test_display_symmetrical_x_y(self):
         r = Rectangle(2, 3, 2, 2)
         out = ("\n" +
                "\n" +
@@ -250,8 +251,19 @@ class DisplayAttrTestCase(unittest.TestCase):
             printed_out = output.getvalue()
             self.assertEqual(printed_out, out)
 
+    def test_display_unsymmetrical_x_y(self):
+        r = Rectangle(3, 2, 1, 0)
+        out = (" ###\n" +
+               " ###\n")
+
+        with patch('sys.stdout', new=StringIO()) as output:
+            r.display()
+            printed_out = output.getvalue()
+            self.assertEqual(printed_out, out)
+
 
 class StrAttrTestCase(unittest.TestCase):
+    
     def test_str_attr_output(self):
         r = Rectangle(4, 6, 2, 1, 12)
         out = "[Rectangle] (12) 2/1 - 4/6"
