@@ -6,14 +6,11 @@ from io import StringIO
 from unittest.mock import patch
 
 
-
 class InheritanceTestCase(unittest.TestCase):
 
     def test_rectangle_object_is_instance_of_base(self):
         b = Rectangle(1, 2)
         self.assertIsInstance(b, Base)
-
-
 
 
 class InstanceAttrTestCase(unittest.TestCase):
@@ -99,7 +96,6 @@ class WidthAttrTestCase(unittest.TestCase):
         with self.assertRaises(TypeError):
             d.width = 1.0
 
-
     # test list input
     def test_list_input(self):
         """assigning to width should fail with list input"""
@@ -148,7 +144,7 @@ class HeightAttrTestCase(unittest.TestCase):
 
 
 class XAttrTestCase(unittest.TestCase):
-    
+
     @classmethod
     def setUpClass(self):
         self.rectangle = Rectangle(3, 8)
@@ -211,12 +207,12 @@ class AreaAttrTestCase(unittest.TestCase):
 
     def test_output(self):
         """obj.area() should return a value equal to obj.width * obj.height"""
-        self.assertEqual(self.rectangle.area(), 4 * 10) 
+        self.assertEqual(self.rectangle.area(), 4 * 10)
 
-        
+
 class DisplayAttrTestCase(unittest.TestCase):
 
-    def test_print_output(self):
+    def test_display_rectangle(self):
 
         r = Rectangle(4, 6)
         out = ("####\n" +
@@ -231,7 +227,7 @@ class DisplayAttrTestCase(unittest.TestCase):
             printed_output = output.getvalue()
             self.assertEqual(printed_output, out)
 
-    def test_print_height_one(self):
+    def test_display_rectangle_height_one(self):
 
         r = Rectangle(4, 1)
         out = ("####\n")
@@ -241,6 +237,16 @@ class DisplayAttrTestCase(unittest.TestCase):
             printed_out = output.getvalue()
             self.assertEqual(printed_out, out)
 
+
+class StrAttrTestCase(unittest.TestCase):
+    def test_str_attr_output(self):
+        r = Rectangle(4, 6, 2, 1, 12)
+        out = "[Rectangle] (12) 2/1 - 4/6"
+
+        with patch('sys.stdout', new=StringIO()) as output:
+            print(r)
+            print_out = output.getvalue().strip()
+            self.assertEqual(print_out, out)
 
 
 if __name__ == "__main__":
