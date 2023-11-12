@@ -38,7 +38,6 @@ class Rectangle(Base):
             raise ValueError("height must be > 0")
         self.__height = value
 
-
     @property
     def x(self):
         return self.__x
@@ -63,20 +62,28 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         self.__y = value
 
-
-
     def area(self):
         """return area of the rectangle"""
         return self.width * self.height
 
     def display(self):
-        if self.__width == 0 and self.__height == 0:
+        """display"""
+        rec_height = self.__height
+        while rec_height > 0:
+            for n in range(self.__width):
+                print("#", end="")
             print()
-        else:
-            l = self.__height
+            rec_height -= 1
 
-            while l > 0:
-                for n in range(self.__width):
-                    print("#", end="")
-                print()
-                l -= 1
+    def __str__(self):
+        """convert instance to a string"""
+        obj_id = self.id
+        obj_x = self.x
+        obj_y = self.y
+        obj_w = self.width
+        obj_h = self.height
+        return "[Rectangle] ({0:d}) {1:d}/{2:d} - {3:d}/{4:d}".format(obj_id,
+                                                                      obj_x,
+                                                                      obj_y,
+                                                                      obj_w,
+                                                                      obj_h)
