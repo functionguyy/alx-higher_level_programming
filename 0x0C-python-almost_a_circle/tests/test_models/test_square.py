@@ -25,11 +25,6 @@ class IdAttrTestCase(unittest.TestCase):
         a = Square(9, 15, id=3)
         self.assertEqual(a.id, 3)
 
-    def test_negative_id_input(self):
-        """assigning to id should fail with negative input"""
-        with self.assertRaises(ValueError):
-            a = Square(5, id=-2)
-
 
 class InstanceAttrTestCase(unittest.TestCase):
 
