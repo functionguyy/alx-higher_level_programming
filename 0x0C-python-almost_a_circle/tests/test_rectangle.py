@@ -50,6 +50,11 @@ class InstanceAttrTestCase(unittest.TestCase):
         c = Rectangle(8, 10)
         self.assertTrue(hasattr(c, "display"), 'no display attribute')
 
+    def test_rectangle_object_has_update_attr(self):
+        """Rectangle object should have update attrinute"""
+        c = Rectangle(8, 10)
+        self.assertTrue(hasattr(c, "update"), 'no update attribute')
+
 
 class IdAttrTestCase(unittest.TestCase):
 
@@ -263,7 +268,7 @@ class DisplayAttrTestCase(unittest.TestCase):
 
 
 class StrAttrTestCase(unittest.TestCase):
-    
+
     def test_str_attr_output(self):
         r = Rectangle(4, 6, 2, 1, 12)
         out = "[Rectangle] (12) 2/1 - 4/6"
@@ -276,112 +281,97 @@ class StrAttrTestCase(unittest.TestCase):
 
 class UpdateAttrTestCase(unittest.TestCase):
 
-    
     def test_update_id_negative_input(self):
-        """assigning to width should fail with negative input"""
+        """assigning to id should fail with negative input"""
         a = Rectangle(8, 5)
         with self.assertRaises(ValueError):
-            a.width = -1
+            a.update(-1)
 
-    # test float input
-    def test_update_id_float_input(self):
-        """assigning to width should fail with float input"""
-        d = Rectangle(1, 8)
-        with self.assertRaises(TypeError):
-            d.width = 1.0
+    # test float id input
+    # def test_update_id_float_input(self):
 
-    # test bool input
-    def test_update_id_bool_input(self):
-        """assigning to width should fail with list input"""
-        d = Rectangle(3, 6)
-        with self.assertRaises(TypeError):
-            d.width = True
-
+    # test bool id input
+    # def test_update_id_bool_input(self):
 
     def test_update_width_negative_input(self):
         """assigning to width should fail with negative input"""
         a = Rectangle(8, 5)
         with self.assertRaises(ValueError):
-            a.width = -1
+            a.update(1, -2)
 
     # test float input
     def test_update_width_float_input(self):
         """assigning to width should fail with float input"""
         d = Rectangle(1, 8)
         with self.assertRaises(TypeError):
-            d.width = 1.0
+            d.update(1, 1.1)
 
     # test bool input
     def test_update_width_bool_input(self):
-        """assigning to width should fail with list input"""
+        """assigning to width should fail with bool input"""
         d = Rectangle(3, 6)
         with self.assertRaises(TypeError):
-            d.width = True
-    
+            d.update(1, True)
+
     def test_update_height_negative_input(self):
-        """assigning to width should fail with negative input"""
+        """assigning to height should fail with negative input"""
         a = Rectangle(8, 5)
         with self.assertRaises(ValueError):
-            a.width = -1
+            a.update(59, 10, -1)
 
     # test float input
     def test_update_height_float_input(self):
-        """assigning to width should fail with float input"""
+        """assigning to height should fail with float input"""
         d = Rectangle(1, 8)
         with self.assertRaises(TypeError):
-            d.width = 1.0
+            d.update(59, 10, 1.1)
 
     # test bool input
     def test_update_height_bool_input(self):
-        """assigning to width should fail with list input"""
+        """assigning to height should fail with bool input"""
         d = Rectangle(3, 6)
         with self.assertRaises(TypeError):
-            d.width = True
-    
+            d.update(59, 10, True)
+
     def test_update_x_negative_input(self):
-        """assigning to width should fail with negative input"""
+        """assigning to x should fail with negative input"""
         a = Rectangle(8, 5)
         with self.assertRaises(ValueError):
-            a.width = -1
+            a.update(59, 10, 12, -1)
 
     # test float input
     def test_update_x_float_input(self):
-        """assigning to width should fail with float input"""
+        """assigning to x should fail with float input"""
         d = Rectangle(1, 8)
         with self.assertRaises(TypeError):
-            d.width = 1.0
+            d.update(59, 10, 12,  2.1)
 
     # test bool input
     def test_update_x_bool_input(self):
-        """assigning to width should fail with list input"""
+        """assigning to x should fail with bool input"""
         d = Rectangle(3, 6)
         with self.assertRaises(TypeError):
-            d.width = True
+            d.update(59, 10, 12, True)
 
     def test_update_y_negative_input(self):
-        """assigning to width should fail with negative input"""
+        """assigning to y should fail with negative input"""
         a = Rectangle(8, 5)
         with self.assertRaises(ValueError):
-            a.width = -1
+            a.update(59, 10, 12, 3, -1)
 
     # test float input
     def test_update_y_float_input(self):
-        """assigning to width should fail with float input"""
+        """assigning to y should fail with float input"""
         d = Rectangle(1, 8)
         with self.assertRaises(TypeError):
-            d.width = 1.0
+            d.update(20, 10, 11, 3, 1.0)
 
     # test bool input
     def test_update_y_bool_input(self):
-        """assigning to width should fail with list input"""
+        """assigning to y should fail with bool input"""
         d = Rectangle(3, 6)
         with self.assertRaises(TypeError):
-            d.width = True
-
-
-
-
-
+            d.update(20, 10, 11, 3, True)
 
 
 if __name__ == "__main__":
