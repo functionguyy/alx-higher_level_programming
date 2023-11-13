@@ -8,8 +8,7 @@ class Base:
 
     def __init__(self, id=None):
         if id is None:
-            self.id = type(self).__nb_object + 1
-        elif id < 0:
-            raise ValueError("id must be a positive integer")
+            self.__nb_object += 1
+            self.id = self.__nb_object
         else:
             self.id = id
