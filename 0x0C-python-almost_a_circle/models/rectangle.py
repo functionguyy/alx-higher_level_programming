@@ -109,10 +109,9 @@ class Rectangle(Base):
             except IndexError:
                 pass
         else:
-            for k,v in kwargs.items():
+            for k, v in kwargs.items():
                 if hasattr(self, k):
                     if k == "id":
                         super().__init__(v)
                         continue
                     setattr(self, k, v)
-
