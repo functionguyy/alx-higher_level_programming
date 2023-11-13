@@ -4,10 +4,10 @@
 
 class Base:
     """define internal for Base object type"""
-    __nb_object = 0
+    __nb_objects = 0
 
     def __init__(self, id=None):
-        if id is None or id < 0:
-            self.id = type(self).__nb_object + 1
+        if id is None or id < 0 :
+            self.id = type(self).__nb_objects + 1
         else:
             self.id = id
