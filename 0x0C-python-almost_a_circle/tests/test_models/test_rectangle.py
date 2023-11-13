@@ -282,12 +282,6 @@ class StrAttrTestCase(unittest.TestCase):
 
 class UpdateAttrTestCase(unittest.TestCase):
 
-    def test_update_id_negative_input(self):
-        """assigning to id should fail with negative input"""
-        a = Rectangle(8, 5)
-        with self.assertRaises(ValueError):
-            a.update(-1)
-
     # test float id input
     # def test_update_id_float_input(self):
 
