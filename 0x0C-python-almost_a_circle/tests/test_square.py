@@ -30,12 +30,15 @@ class IdAttrTestCase(unittest.TestCase):
         with self.assertRaises(ValueError):
             a = Square(5, id=-2)
 
+
 class InstanceAttrTestCase(unittest.TestCase):
 
     def test_square_object_has_size_attr(self):
         """Square object should have size attribute"""
         a = Square(5)
         self.assertTrue(hasattr(a, "size"), 'no size attribute')
+
+
 class SizeAttrTestCase(unittest.TestCase):
 
     def test_getter_method(self):
