@@ -96,7 +96,7 @@ class Rectangle(Base):
                                                                       obj_w,
                                                                       obj_h)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """assign an argument to each attribute"""
 
         if len(args) > 0:
@@ -108,3 +108,8 @@ class Rectangle(Base):
                 self.y = args[4]
             except IndexError:
                 pass
+        else:
+            for k,v in kwargs.items():
+                if hasattr(self, k):
+                    setattr(self, k, v)
+
