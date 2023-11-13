@@ -16,5 +16,5 @@ class Square(Rectangle):
         obj_x = self.x
         obj_y = self.y
         obj_size = self.width
-        return "[Sqaure] ({0:d}) {1:d}/{2:d} - {3:d}".format(obj_id, obj_x,
+        return "[Square] ({0:d}) {1:d}/{2:d} - {3:d}".format(obj_id, obj_x,
                                                              obj_y, obj_size)
