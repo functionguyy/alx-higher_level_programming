@@ -111,5 +111,8 @@ class Rectangle(Base):
         else:
             for k,v in kwargs.items():
                 if hasattr(self, k):
+                    if k == "id":
+                        super().__init__(v)
+                        continue
                     setattr(self, k, v)
 
