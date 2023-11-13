@@ -18,3 +18,13 @@ class Square(Rectangle):
         obj_size = self.width
         return "[Square] ({0:d}) {1:d}/{2:d} - {3:d}".format(obj_id, obj_x,
                                                              obj_y, obj_size)
+
+    @property
+    def size(self):
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        """set value of size attribute"""
+        self.width = value
+        self.height = value
