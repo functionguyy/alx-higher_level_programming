@@ -9,6 +9,7 @@ from unittest.mock import patch
 class InheritanceTestCase(unittest.TestCase):
 
     def test_rectangle_object_is_instance_of_base(self):
+        """Rectangle object should be an instance of class Base"""
         b = Rectangle(1, 2)
         self.assertIsInstance(b, Base)
 
