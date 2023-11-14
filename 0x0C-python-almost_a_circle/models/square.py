@@ -34,9 +34,13 @@ class Square(Rectangle):
 
         if len(args) > 0:
             try:
-                size = args[1]
-                obj_x = args[2]
-                obj_y = args[3]
+                self.id = args[0]
+                self.size = args[1]
+                self.x = args[2]
+                self.y = args[3]
             except IndexError:
                 pass
-        super().update(args[0], size, size, obj_x, obj_y)
+        else:
+            for k, v in kwargs.items():
+                if hasattr(self, k):
+                    setattr(self, k, v)
