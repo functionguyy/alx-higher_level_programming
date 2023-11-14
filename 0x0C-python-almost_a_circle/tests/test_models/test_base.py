@@ -13,7 +13,7 @@ class IdAttributeTestCase(unittest.TestCase):
     def test_auto_id_is_assigned(self):
         """id should be auto-generated for instance without specified id"""
         b = Base()
-        self.assertIsNotNone(b.id)
+        self.assertEqual(b.id, 1)
 
 
 if __name__ == "__main__":
