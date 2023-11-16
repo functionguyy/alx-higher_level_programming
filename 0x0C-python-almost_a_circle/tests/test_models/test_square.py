@@ -8,9 +8,11 @@ from unittest.mock import patch
 
 class InheritanceTestCase(unittest.TestCase):
 
+    def setUp(self):
+        self.square = Square(5)
+
     def test_square_object_is_instance_of_rectangle(self):
-        a = Square(5)
-        self.assertIsInstance(a, Rectangle)
+        self.assertIsInstance(self.square, Rectangle)
 
 
 class IdAttrTestCase(unittest.TestCase):
@@ -28,95 +30,140 @@ class IdAttrTestCase(unittest.TestCase):
 
 class InstanceAttrTestCase(unittest.TestCase):
 
+    def setUp(self):
+        self.square = Square(5)
+
     def test_square_object_has_size_attr(self):
         """Square object should have size attribute"""
-        a = Square(5)
-        self.assertTrue(hasattr(a, "size"), 'no size attribute')
+        self.assertTrue(hasattr(self.square, "size"), 'no size attribute')
 
 
 class SizeAttrTestCase(unittest.TestCase):
 
+    @classmethod
+    def setUpClass(self):
+        self.square = Square(5)
+
     def test_getter_method(self):
         """obj.size should return value of size"""
-        a = Square(5)
-        self.assertEqual(a.size, 5)
+        self.assertEqual(self.square.size, 5)
 
     def test_setter_method(self):
         """obj.size = value should change value of size"""
-        a = Square(5)
-        a.size = 8
-        self.assertEqual(a.size, 8)
+        self.square.size = 8
+        self.assertEqual(self.square.size, 8)
 
     def test_string_input(self):
         """assigning to size should fail with string input"""
         with self.assertRaises(TypeError):
-            a = Square("hello")
+            Square("hello")
 
     def test_negative_input(self):
         """assigning to size should fail with negative integer input"""
         with self.assertRaises(ValueError):
-            a = Square(-9)
+            Square(-9)
 
     def test_float_input(self):
         """assigning to size should fail with float input"""
         with self.assertRaises(TypeError):
-            a = Square(1.1)
+            Square(1.1)
 
     def test_bool_input(self):
         """assigning to size should fail with bool input"""
         with self.assertRaises(TypeError):
-            a = Square(True)
+            Square(True)
 
     def test_zero_input(self):
         """assigning to size should fail with zero input"""
         with self.assertRaises(ValueError):
-            a = Square(0)
+            Square(0)
 
 
 class XAttrTestCase(unittest.TestCase):
 
     @classmethod
     def setUpClass(self):
-        self.square = Square(5)
+        self.square = Square(5, 4)
+
+    def test_getter_method(self):
+        """obj.x should return value of x"""
+        self.assertEqual(self.square.x, 4)
+
+    def test_setter_method(self):
+        """obj.size = value should change value of x"""
+        self.square.x = 6
+        self.assertEqual(self.square.x, 6)
 
     def test_string_input(self):
         """assigning to x should fail with string input"""
         with self.assertRaises(TypeError):
-            self.square.x = "test"
+            Square(7, "2")
 
     def test_negative_input(self):
-        """assigning to x should fail with string input"""
+        """assigning to x should fail with negative number input"""
         with self.assertRaises(ValueError):
-            self.square.x = -5
+            Square(5, -4)
 
 
 class YAttrTestCase(unittest.TestCase):
 
     @classmethod
     def setUpClass(self):
-        self.square = Square(5)
+        self.square = Square(5, 4, 6)
+
+    def test_getter_method(self):
+        """obj.y should return value of y"""
+        self.assertEqual(self.square.y, 6)
+
+    def test_setter_method(self):
+        """obj.y = value should change value of y"""
+        self.square.y = 9
+        self.assertEqual(self.square.y, 9)
 
     def test_string_input(self):
         """assigning to y should fail with string input"""
         with self.assertRaises(TypeError):
-            self.square.y = "new"
+            Square(4, 7, "9")
 
     def test_negative_input(self):
         """assigning to y should fail with negative input"""
         with self.assertRaises(ValueError):
-            self.square.y = -3
+            Square(2, 3, -6)
 
 
 class StrAttrTestCase(unittest.TestCase):
 
+    @classmethod
+    def setUpClass(self):
+        self.square = Square(5, 2, 3, 89)
+
     def test_str_attr_output(self):
-        s = Square(5, 2, 3, 89)
         out = "[Square] (89) 2/3 - 5"
 
         with patch('sys.stdout', new=StringIO()) as output:
-            print(s)
+            print(self.square)
             print_out = output.getvalue().strip()
             self.assertEqual(print_out, out)
+
+
+class UpdateAttrTestCase(unittest.TestCase):
+
+    @classmethod
+    def setUpClass(self):
+        self.square = Square(5)
+
+    def test_update_with_no_args(self):
+
+        a = self.square.id
+
+        self.square.update()
+
+        b = self.square.id
+
+        self.assertEqual(a, b)
+        self.assertEqual(self.square.size, 5)
+        self.assertEqual(self.square.x, 0)
+        self.assertEqual(self.square.y, 0)
 
 
 if __name__ == "__main__":
