@@ -148,8 +148,7 @@ class StrAttrTestCase(unittest.TestCase):
 
 class UpdateAttrTestCase(unittest.TestCase):
 
-    @classmethod
-    def setUpClass(self):
+    def setUp(self):
         self.square = Square(5)
 
     def test_update_with_no_args(self):
@@ -164,6 +163,48 @@ class UpdateAttrTestCase(unittest.TestCase):
         self.assertEqual(self.square.size, 5)
         self.assertEqual(self.square.x, 0)
         self.assertEqual(self.square.y, 0)
+
+    def test_update_pos_id(self):
+
+        # one position arg passed correct type
+        self.square.update(9)
+        self.assertEqual(self.square.id, 9)
+        self.assertEqual(self.square.size, 5)
+        self.assertEqual(self.square.x, 0)
+        self.assertEqual(self.square.y, 0)
+
+    def test_update_pos_id_and_size(self):
+
+        self.square.update(3, 10)
+        self.assertEqual(self.square.id, 3)
+        self.assertEqual(self.square.size, 10)
+        self.assertEqual(self.square.x, 0)
+        self.assertEqual(self.square.y, 0)
+
+        # update size with wrong type
+        with self.assertRaises(TypeError):
+            self.square.update(3, "10")
+
+        # update size with wrong value
+        with self.assertRaises(ValueError):
+            self.square.update(3, -6)
+
+    def test_update_pos_id_size_and_x(self):
+
+        self.square.update(6, 9, 46)
+        self.assertEqual(self.square.id, 6)
+        self.assertEqual(self.square.size, 9)
+        self.assertEqual(self.square.x, 46)
+        self.assertEqual(self.square.y, 0)
+
+        # update x with wrong type
+        with self.assertRaises(TypeError):
+            self.square.update(6, 9, "46")
+
+        # update x with wrong value type
+        with self.assertRaises(ValueError):
+            self.square.update(6, 9, -1)
+
 
 
 if __name__ == "__main__":

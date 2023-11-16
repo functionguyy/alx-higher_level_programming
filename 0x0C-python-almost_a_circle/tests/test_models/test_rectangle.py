@@ -62,7 +62,10 @@ class IdAttrTestCase(unittest.TestCase):
     def test_id_is_not_none(self):
         """Rectangle object id should not be None"""
         a = Rectangle(8, 10)
-        self.assertIsNotNone(a.id)
+        num = a.id
+        b = Rectangle(7, 12)
+        num2 = b.id
+        self.assertNotEqual(num, num2)
 
     def test_id_specified(self):
         """Rectangle object id should be the id passed if any"""
