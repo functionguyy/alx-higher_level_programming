@@ -101,7 +101,7 @@ class Rectangle(Base):
 
         if len(args) > 0:
             try:
-                super().__init__(args[0])
+                self.id = args[0]
                 self.width = args[1]
                 self.height = args[2]
                 self.x = args[3]
@@ -111,7 +111,14 @@ class Rectangle(Base):
         else:
             for k, v in kwargs.items():
                 if hasattr(self, k):
-                    if k == "id":
-                        super().__init__(v)
-                        continue
                     setattr(self, k, v)
+
+    def to_dictionary(self):
+        """returns the dictionary representation of a Rectangle"""
+        attr_names = ['id', 'width', 'height', 'x', 'y']
+        attr_dict = {}
+
+        for name in attr_names:
+            attr_dict[name] = getattr(self, name, None)
+
+        return attr_dict
