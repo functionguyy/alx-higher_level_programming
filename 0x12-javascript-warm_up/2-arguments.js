@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-const { argv } = require('node:process');
+const { argv } = require('process');
 
 const argCount = argv.length - 2;
 const noArg = 'No argument';
