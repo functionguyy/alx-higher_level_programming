@@ -1,12 +1,8 @@
 #!/usr/bin/node
 
-const phrases = {
-  firstPhrase: 'C is fun',
-  secondPhrase: 'Python is cool',
-  thirdPhrase: 'Javascript is amazing'
-};
-
-const { firstPhrase, secondPhrase, thirdPhrase } = phrases;
+const firstPhrase = 'C is fun';
+const secondPhrase = 'Python is cool';
+const thirdPhrase = 'Javascript is amazing';
 
 console.log(firstPhrase);
 console.log(secondPhrase);
