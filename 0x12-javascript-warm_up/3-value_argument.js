@@ -4,7 +4,7 @@ const { argv } = require('process');
 
 let i = 0;
 const noArg = 'No argument';
-for (const name of argv.slice(2)){
+for (const name of argv.slice(2)) {
   i++;
 }
 
