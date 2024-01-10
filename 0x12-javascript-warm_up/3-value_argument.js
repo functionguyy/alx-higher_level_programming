@@ -4,11 +4,10 @@ const { argv } = require('process');
 
 let i = 0;
 const noArg = 'No argument';
-for (const name of argv.slice(2)) {
-  i++;
-}
+const lastItem = argv.at(-1);
+i = argv.indexOf(lastItem);
 
-if (i > 0) {
+if (i > 1) {
   console.log(argv[2]);
 } else {
   console.log(noArg);
