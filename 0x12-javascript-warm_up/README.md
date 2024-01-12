@@ -31,6 +31,5 @@ if (x === undefined) {
 > The strict _equality_ operator must be used here, because it strictly
 > compares two values for equality. Neither value is implicitly converted to
 > some other value before being compared. If the values have different types,
-> the values are considered unequal. if the values have the same types, the
-> if the values have the same type, are not numbers, and have the same value, 
-> they're considered equal. [see more](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness#strict_equality_using)
+> the values are considered unequal. if the values have the same type, are not 
+> numbers, and have the same value, they're considered equal. [see more](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness#strict_equality_using)
