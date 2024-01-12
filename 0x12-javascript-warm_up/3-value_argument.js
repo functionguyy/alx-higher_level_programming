@@ -4,13 +4,14 @@ const { argv } = require('process');
 
 let i = 0;
 const noArg = 'No argument';
+const arg = argv.splice(2);
 
-while (argv[i] !== undefined) {
+while (arg[i] !== undefined) {
   i++;
 }
 
-if (i > 1) {
-  console.log(argv[2]);
+if (i > 0) {
+  console.log(arg[0]);
 } else {
   console.log(noArg);
 }
