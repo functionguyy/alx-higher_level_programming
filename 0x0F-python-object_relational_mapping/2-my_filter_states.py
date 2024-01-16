@@ -20,10 +20,8 @@ def query_db():
                               passwd=args.password,
                               db=args.db_name, charset="utf8")
     db_cur = db_conn.cursor()
-    db_cur.execute(
-            """SELECT * FROM states
-            WHERE name = %s
-            ORDER BY id ASC""", (args.state_name,))
+    query = "SELECT * FROM states WHERE name=%s ORDER BY id ASC"
+    db_cur.execute(query, (args.state_name,))
     query_rows = db_cur.fetchall()
     for row in query_rows:
         print(row)
