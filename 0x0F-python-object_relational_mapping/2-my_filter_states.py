@@ -20,7 +20,7 @@ def query_db():
                               passwd=args.password,
                               db=args.db_name, charset="utf8")
     db_cur = db_conn.cursor()
-    query = """SELECT * FROM states WHERE name = '{:s}'
+    query = """SELECT * FROM states WHERE REGEXP_LIKE(name, '{:s}', 'c')
             ORDER BY id ASC""".format(args.state_name)
     db_cur.execute(query)
     query_rows = db_cur.fetchall()
