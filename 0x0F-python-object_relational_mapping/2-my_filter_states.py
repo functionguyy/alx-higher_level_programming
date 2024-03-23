@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-""" script that lists all states with names starting with uppercase N from the
-database hbtn_0e_0_usa
+""" script that lists all values in the states table of hbtn_0e_0_usa where
+name matches the argument state_name
 """
 import argparse
 import MySQLdb
@@ -20,8 +20,8 @@ def query_db():
                               passwd=args.password,
                               db=args.db_name, charset="utf8")
     db_cur = db_conn.cursor()
-    query = """SELECT * FROM states WHERE REGEXP_LIKE(name, '{:s}', 'c')
-            ORDER BY id ASC""".format(args.state_name)
+    query = """SELECT * FROM states WHERE name = '{state}'
+               ORDER BY id ASC""".format(state=args.state_name)
     db_cur.execute(query)
     query_rows = db_cur.fetchall()
     for row in query_rows:
