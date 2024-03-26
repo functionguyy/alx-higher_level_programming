@@ -35,7 +35,7 @@ def query_db_with_orm(uname, pword, db):
 
     result = session.query(State).order_by(State.id).first()
 
-    print(f"{instance.id}: {instance.name}")
+    print(f"{result.id}: {result.name}")
 
 
 if __name__ == "__main__":
