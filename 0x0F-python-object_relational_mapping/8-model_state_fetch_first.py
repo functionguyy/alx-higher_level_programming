@@ -33,9 +33,11 @@ def query_db_with_orm(uname, pword, db):
     Session.configure(bind=engine)
     session = Session()
 
-    result = session.query(State).order_by(State.id).first()
-
-    print(f"{result.id}: {result.name}")
+    try:
+        result = session.query(State).order_by(State.id).first()
+        print(f"{result.id: {result.name}")
+    except SQLAlchemyError as e:
+        pass
 
 
 if __name__ == "__main__":
