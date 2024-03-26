@@ -35,7 +35,7 @@ def query_db_with_orm(uname, pword, db):
 
     try:
         result = session.query(State).order_by(State.id).first()
-        print(f"{result.id: {result.name}")
+        print(f"{result.id}: {result.name}")
     except SQLAlchemyError as e:
         pass
 
