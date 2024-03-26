@@ -1,4 +1,4 @@
-#!/home/functionguyy/myenv/bin/python3
+#!/usr/bin/python3
 """ script """
 import argparse
 from sqlalchemy import create_engine
