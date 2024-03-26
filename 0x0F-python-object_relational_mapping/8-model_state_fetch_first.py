@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" script """
+"""script that print first state"""
 import argparse
 from sqlalchemy import create_engine
 from model_state import Base, State
