@@ -33,11 +33,12 @@ def query_db_with_orm(uname, pword, db):
     Session.configure(bind=engine)
     session = Session()
 
-    try:
-        result = session.query(State).order_by(State.id).first()
+    result = session.query(State).order_by(State.id).first()
+
+    if result is None:
+        print("Nothing")
+    else:
         print(f"{result.id}: {result.name}")
-    except MultipleResultsFound as e:
-        pass
 
 
 if __name__ == "__main__":
