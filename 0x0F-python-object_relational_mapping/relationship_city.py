@@ -4,8 +4,7 @@ and an instance `declarative_base()` of the SQLAlchemy library
 This is used to for the ORM mapping and configuration
 """
 from sqlalchemy import Column, String, Integer, ForeignKey
-from model_state import Base, State
-from sqlalchemy.orm import relationship
+from model_state import Base
 
 
 class City(Base):
