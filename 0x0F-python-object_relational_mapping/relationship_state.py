@@ -10,7 +10,13 @@ Base = declarative_base()
 
 
 class State(Base):
-    """State class mapped to states table"""
+    """State class mapped to states table
+
+    Attributes:
+        id: primary key
+        name: name of the state
+        cities: foriegn key
+    """
 
     __tablename__ = 'states'
 
