@@ -36,7 +36,7 @@ def query_db_with_orm(uname, pword, db):
     db_url = "mysql+mysqldb://{}:{}@localhost:3306/{}".format(uname,
                                                               pword,
                                                               db)
-    engine = create_engine(db_url)
+    engine = create_engine(db_url, pool_pre_ping=True)
 
     Base.metadata.create_all(engine)
 
