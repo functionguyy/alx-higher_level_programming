@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Script to create State"""
+"""Script to create State 'California' with the City 'San Francisco' from a
+database"""
 import argparse
 from sqlalchemy import create_engine
 from relationship_city import City
