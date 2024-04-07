@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-"""module contains the class definition of a City object which is to be mapped
-to the database
+"""This module defines a class definition of a `City`
+and an instance `declarative_base()` of the SQLAlchemy library
+This is used to for the ORM mapping and configuration
 """
 from sqlalchemy import Column, String, Integer, ForeignKey
 from model_state import Base, State

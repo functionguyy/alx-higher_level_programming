@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-"""module contains the class definition of a State class and SQLAlchemy
-declarative base class
+"""This module defines a class definition of a `State and an instance
+`Base = declarative_base()` of the SQLAlchemy library
+This is used to for the ORM mapping and configuration
 """
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
@@ -27,4 +28,4 @@ class State(Base):
                 )
     name = Column(String(128),
                   nullable=False)
-    cities = relationship("City", back_ref="state")
+    cities = relationship("City", backref="state")
