@@ -45,7 +45,8 @@ def query_db_with_orm(uname, pword, db):
     session = Session()
 
     new_state = State(name="California")
-    new_state.cities = [City(name="San Francisco")]
+    city = City(name="San Francisco")
+    new_state.cities.append(city)
     session.add(new_state)
     session.commit()
     session.close()
