@@ -1,6 +1,9 @@
 #!/usr/bin/python3
-"""Script to create State 'California' with the City 'San Francisco' from a
-database"""
+"""
+A module that creates the `State` `California` with the `City`:
+`San Fransisco`
+from the database `hbtn_0e_100_usa`
+"""
 import argparse
 from sqlalchemy import create_engine
 from relationship_city import City
@@ -22,7 +25,13 @@ def parse_cmd_args():
 
 
 def query_db_with_orm(uname, pword, db):
-    """query a database with data passed as command line arguments"""
+    """
+    query a database with data passed as command line arguments
+        Args:
+        uname: (str): A username of the database
+        pword: (str): The database password
+        db_name: (str): The name of the database to use
+    """
 
     db_url = "mysql+mysqldb://{}:{}@localhost:3306/{}".format(uname,
                                                               pword,
@@ -40,6 +49,7 @@ def query_db_with_orm(uname, pword, db):
     new_state.cities = [City(name="San Francisco")]
     session.add(new_state)
     session.commit()
+    session.close()
     # query the database for the state 'California' and if it returns None
     # create a State 'California' and add the city 'San Francisco' to it
     # add new state object to database using session
