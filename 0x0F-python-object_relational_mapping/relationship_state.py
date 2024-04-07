@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """module contains the class definition of a State class and SQLAlchemy
-declarative base class"""
+declarative base class
+"""
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship

@@ -1,12 +1,14 @@
 #!/usr/bin/python3
-"""module contains the class definition of a City object"""
+"""module contains the class definition of a City object which is to be mapped
+to the database
+"""
 from sqlalchemy import Column, String, Integer, ForeignKey
 from model_state import Base, State
 from sqlalchemy.orm import relationship
 
 
 class City(Base):
-    """Class"""
+    """Class definition for City object"""
 
     __tablename__ = 'cities'
 
