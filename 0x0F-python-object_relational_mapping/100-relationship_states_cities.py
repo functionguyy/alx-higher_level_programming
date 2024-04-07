@@ -38,12 +38,11 @@ def query_db_with_orm(uname, pword, db):
                                                               db)
     engine = create_engine(db_url)
 
+    Base.metadata.create_all(engine)
+
     Session = sessionmaker()
     Session.configure(bind=engine)
     session = Session()
-
-    # create database table
-    Base.metadata.create_all(engine)
 
     new_state = State(name="California")
     new_state.cities = [City(name="San Francisco")]
