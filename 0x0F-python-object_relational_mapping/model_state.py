@@ -3,12 +3,13 @@
 declarative base class"""
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import relationship
 
 Base = declarative_base()
 
 
 class State(Base):
-    """Class"""
+    """State class mapped to states table"""
 
     __tablename__ = 'states'
 
@@ -19,3 +20,4 @@ class State(Base):
                 )
     name = Column(String(128),
                   nullable=False)
+    cities = relationship("City", back_populates="state")
