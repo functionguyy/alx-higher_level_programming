@@ -10,7 +10,11 @@ class User(Base):
 
     addresses = relationship("Address", cascade="all, delete-orphan")
 ```
-The above indicates 
+The above indicates that 
+- when the "parent"(User) object is marked for
+deletion, its "child"(Address) objects should also be marked for deletion
+- If the child object is deassociated from the parent object, it should be 
+deleted  
 
 For `relationship()`, `delete-orphan` cascade is normally configured only on
 the "one" side of a one-to-many relationship, and not on the "many" side of a
