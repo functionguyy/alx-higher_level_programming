@@ -3,6 +3,10 @@
 A module that creates the `State` `California` with the `City`:
 `San Fransisco`
 from the database `hbtn_0e_100_usa`
+
+Attributes:
+    parse_cmd_args: function
+    query_db_with_orm: function
 """
 import argparse
 from sqlalchemy import create_engine
