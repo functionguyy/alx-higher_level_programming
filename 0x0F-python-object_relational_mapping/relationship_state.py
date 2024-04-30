@@ -2,6 +2,10 @@
 """This module defines a class definition of a `State and an instance
 `Base = declarative_base()` of the SQLAlchemy library
 This is used to for the ORM mapping and configuration
+
+Attribute:
+    State: function
+    Base: declareative base class instance
 """
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
