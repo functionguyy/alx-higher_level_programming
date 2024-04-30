@@ -2,6 +2,9 @@
 """This module defines a class definition of a `City`
 and an instance `declarative_base()` of the SQLAlchemy library
 This is used to for the ORM mapping and configuration
+
+Attributes:
+    City: function
 """
 from sqlalchemy import Column, String, Integer, ForeignKey
 from model_state import Base
