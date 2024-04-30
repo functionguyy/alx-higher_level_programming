@@ -10,9 +10,10 @@ from model_state import Base
 class City(Base):
     """Class definition for City object
 
-    Attributes: 
+    Attributes:
         id: primary key
         name: name of the state
+        state_id: foriegn key
     """
 
     __tablename__ = 'cities'
@@ -25,4 +26,3 @@ class City(Base):
                   nullable=False,
                   )
     state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
-    # state = relationship("State", back_populates="cities")
