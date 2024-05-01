@@ -1,13 +1,5 @@
 #!/usr/bin/python3
-"""
-This module defines a class definition of a State and an instance
-Base = declarative_base() of the SQLAlchemy library
-This is used to for the ORM mapping and configuration
-
-Attribute:
-    State: function
-    Base: declareative base class instance
-"""
+""" This is used to for the ORM mapping and configuration """
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
@@ -17,7 +9,9 @@ Base = declarative_base()
 
 
 class State(Base):
-    """State class mapped to states table
+    """
+    State class mapped to states table
+    ORM relationship
 
     Attributes:
         id: primary key

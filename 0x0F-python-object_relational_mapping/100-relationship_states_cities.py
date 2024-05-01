@@ -1,12 +1,5 @@
 #!/usr/bin/python3
-"""
-A module that creates the State California with the City:
-San Fransisco from the database hbtn_0e_100_usa
-
-Attributes:
-    parse_cmd_args: function
-    query_db_with_orm: function
-"""
+"""A module that creates the State California with the City"""
 import argparse
 from sqlalchemy import create_engine
 from relationship_city import City
@@ -53,10 +46,6 @@ def query_db_with_orm(uname, pword, db):
     session.add(new_state)
     session.commit()
     session.close()
-    # query the database for the state 'California' and if it returns None
-    # create a State 'California' and add the city 'San Francisco' to it
-    # add new state object to database using session
-    # commit
 
 
 if __name__ == "__main__":
