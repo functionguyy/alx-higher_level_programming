@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-"""This module defines a class definition of a `State and an instance
-`Base = declarative_base()` of the SQLAlchemy library
+"""
+This module defines a class definition of a State and an instance
+Base = declarative_base() of the SQLAlchemy library
 This is used to for the ORM mapping and configuration
 
 Attribute:

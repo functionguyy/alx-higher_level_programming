@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 """
-A module that creates the `State` `California` with the `City`:
-`San Fransisco`
-from the database `hbtn_0e_100_usa`
+A module that creates the State California with the City:
+San Fransisco from the database hbtn_0e_100_usa
 
 Attributes:
     parse_cmd_args: function
