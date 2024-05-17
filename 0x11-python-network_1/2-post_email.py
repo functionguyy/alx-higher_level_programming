@@ -33,13 +33,6 @@ def fetch_url(url, data):
 
 
 if __name__ == "__main__":
-    """
-    Main execution block:
-    - Prepares the parameters for the POST request from command line arguments.
-    - Encodes the parameters.
-    - Calls the fetch_url function to send the POST request and fetch the response.
-    - Prints the response content.
-    """
     # prepare parameters for POST request
     values = {'email': sys.argv[2]}
     data = url_parse.urlencode(values)
