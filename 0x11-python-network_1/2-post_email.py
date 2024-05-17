@@ -16,7 +16,10 @@ def fetch_url(url, data):
 
     Args:
     (url): (str) --> the url to open
-    (msg): (str) --> the message request to send
+    (data): (bytes) --> the message request to send
+
+    Returns:
+    str: The body of the response, decoded in utf-8
     """
 
     # send POST request
@@ -29,7 +32,14 @@ def fetch_url(url, data):
     return decoded_content
 
 
-if __name__ = "__main__":
+if __name__ == "__main__":
+    """
+    Main execution block:
+    - Prepares the parameters for the POST request from command line arguments.
+    - Encodes the parameters.
+    - Calls the fetch_url function to send the POST request and fetch the response.
+    - Prints the response content.
+    """
     # prepare parameters for POST request
     values = {'email': sys.argv[2]}
     data = url_parse.urlencode(values)
