@@ -7,6 +7,7 @@ with url_req.urlopen(req) as response:
     the_page = response.read()
 
 decoded_content = the_page.decode('utf-8')
+print('Body response:')
 print('\t- type:', type(the_page))
 print('\t- content:', the_page)
 print('\t- utf8 content:', decoded_content)
