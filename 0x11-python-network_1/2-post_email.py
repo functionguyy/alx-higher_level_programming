@@ -1,13 +1,23 @@
 #!/usr/bin/python3
-"""script takes in a URL and an email,sends a POST request to the passed URL
-with the email as a parameter, and displays the body of the response"""
+"""
+script takes in a URL and an email,sends a POST request to the passed URL
+with the email as a parameter, and displays the body of the response
+"""
+
 import urllib.request as url_req
 import urllib.parse as url_parse
 import sys
 
 
 def fetch_url(url, data):
-    """fetch a url with data"""
+    """
+    Sends a POST request to a URL and displays the body of the response decoded
+    in utf-8
+
+    Args:
+    (url): (str) --> the url to open
+    (msg): (str) --> the message request to send
+    """
 
     # send POST request
     req = url_req.Request(url, data)
