@@ -27,7 +27,7 @@ if __name__ == "__main__":
         try:
             jd = response.json()
             print("[{}] {}".format(jd.get("id"), jd.get("name")))
-        except JSONDecodeError as e:
+        except Exception as e:
             print("Not a valid JSON")
     else:
         print("No result")
