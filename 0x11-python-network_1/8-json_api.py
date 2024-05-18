@@ -11,7 +11,7 @@ def query_API(key=""):
     """send a POST request"""
 
     url = "http://0.0.0.0:5000/search_user"
-    param = key
+    param = {'q': key}
     r = requests.post(url, data=param)
 
     return r
