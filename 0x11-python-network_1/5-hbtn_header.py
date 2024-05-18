@@ -16,4 +16,4 @@ def fetch_url(url):
 
 if __name__ == "__main__":
     response = fetch_url(sys.argv[1])
-    print(response.headers['X-Request-Id'])
+    print(response.headers.get('X-Request-Id'))
