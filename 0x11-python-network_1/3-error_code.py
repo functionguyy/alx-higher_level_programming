@@ -20,7 +20,7 @@ def fetch_url(url):
             the_page = response.read()
             print(the_page.decode('utf-8'))
     except url_err.HTTPError as e:
-        print('Error code: ', e.code)
+        print('Error code:', e.code)
 
 
 if __name__ == "__main__":
