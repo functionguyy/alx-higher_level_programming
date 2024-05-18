@@ -23,11 +23,11 @@ if __name__ == "__main__":
     else:
         response = query_API()
 
-    if response.status_code != 204:
-        try:
-            jd = response.json()
+    try:
+        jd = response.json()
+        if len(jd) == 0:
+            print("No result")
+        else:
             print("[{}] {}".format(jd.get("id"), jd.get("name")))
-        except Exception as e:
+    except Exception as e:
             print("Not a valid JSON")
-    else:
-        print("No result")
