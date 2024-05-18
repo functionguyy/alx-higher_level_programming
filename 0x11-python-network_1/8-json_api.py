@@ -30,4 +30,4 @@ if __name__ == "__main__":
         else:
             print("[{}] {}".format(jd.get("id"), jd.get("name")))
     except Exception as e:
-            print("Not a valid JSON")
+        print("Not a valid JSON")
