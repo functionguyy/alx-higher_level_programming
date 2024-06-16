@@ -35,5 +35,39 @@ if (x === undefined) {
 > numbers, and have the same value, they're considered equal. [see more](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness#strict_equality_using)
 
 
+### Function expressions
+- [function expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function)
+
+The main difference between a `function` expression and a `function`
+declaration is the function _name_, which can be omitted in `function`
+expressions to create _anonymous_ functions.
+
+```javascript
+const getRectArea = function (width, height) {
+	return width * height;
+};
+```
+
+Function expressions are convenient when passing a function as an argument to
+another function.
+
+```javascript
+
+function map(f, a) {
+  const result = new Array(a.length);
+  for (let i = 0; i < a.length; i++) {
+    result[i] = f(a[i]);
+  }
+  return result;
+}
+
+/* function expression */
+const cube = function (x) {
+  return x * x * x;
+};
+
+const numbers = [0, 1, 2, 5, 10];
+console.log(map(cube, numbers)); // [0, 1, 8, 125, 1000]
+```
 ## Resources
 - [Simple Intro to NodeJS Module Scope](https://51elliot.blogspot.com/2012/01/simple-intro-to-nodejs-module-scope.html)
